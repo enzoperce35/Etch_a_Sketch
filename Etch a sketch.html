@@ -25,17 +25,18 @@
     function addtoSubcontainer(elementId, divCount) {
        divCount.forEach(function(squares) {
          elementId.appendChild(squares);
-    }) 
+     }) 
     }
      
-     var group = 0;
-     function setAttribute(squareGroup) {
+      var group = 0;
+    function setAttribute(squareGroup) {
       squareGroup.forEach(function(square) {
-          square.setAttribute('style', "width: 50px; height: 50px; border-style: solid; border-width: 1px 1px; float: left; margin: auto;");
+          square.setAttribute('style', "width: 30px; height: 30px; border-style: solid; border-width: 1px 1px; float: left; margin: auto;");
           square.setAttribute('id', `${++group}`);
+          square.setAttribute('class', 'squares');
       })
      };
-      
+
       const subContainer = createDiv(16);
       const SquaresA = createDiv(16);
       const SquaresB = createDiv(16);
@@ -54,8 +55,15 @@
       const SquaresO = createDiv(16);
       const SquaresP = createDiv(16);
      
+      var button = document.createElement('button');
+        button.textContent =  'Reset the Sketch Pad';
+        button.setAttribute('style', "display: table; margin: auto; margin-top: 100px;")
+        button.setAttribute('id', "button");
+        document.body.append(button);
+      
       const mainContainer = document.createElement('div');
         mainContainer.setAttribute('id', 'mainContainer');
+        mainContainer.setAttribute('style', "margin-top: 75px; margin-bottom: 50px")
         document.body.append(mainContainer);
      
       var myDivs = document.getElementById('mainContainer');
@@ -68,7 +76,6 @@
     });
      
       var SubA = document.getElementById("A"); addtoSubcontainer(SubA, SquaresA); setAttribute(SquaresA);
-      var SubB = document.getElementById("B"); addtoSubcontainer(SubB, SquaresB); setAttribute(SquaresB);
       var SubC = document.getElementById("C"); addtoSubcontainer(SubC, SquaresC); setAttribute(SquaresC); 
       var SubD = document.getElementById("D"); addtoSubcontainer(SubD, SquaresD); setAttribute(SquaresD);
       var SubE = document.getElementById("E"); addtoSubcontainer(SubE, SquaresE); setAttribute(SquaresE);
@@ -82,7 +89,28 @@
       var SubM = document.getElementById("M"); addtoSubcontainer(SubM, SquaresM); setAttribute(SquaresM);
       var SubN = document.getElementById("N"); addtoSubcontainer(SubN, SquaresN); setAttribute(SquaresN);
       var SubO = document.getElementById("O"); addtoSubcontainer(SubO, SquaresO); setAttribute(SquaresO);
+      var SubB = document.getElementById("B"); addtoSubcontainer(SubB, SquaresB); setAttribute(SquaresB);
       var SubP = document.getElementById("P"); addtoSubcontainer(SubP, SquaresP); setAttribute(SquaresP);
+
+      var Squares = document.querySelectorAll(".squares");
+       Squares.forEach((div) => {
+         div.addEventListener('mouseover', (e) => {
+             //div.setAttribute('style', "background-color: green")    this does not work
+            div.style.backgroundColor = "green";   //this works :)
+       });
+     });
+
+      var resetButton = document.querySelector('#button');
+       resetButton.addEventListener('click', function()  {
+           answer =  prompt('How many total squares are there on each side?', 'please enter a number');{
+                if (answer == 64) {
+                  window.open("");
+                }else {
+                 answer = prompt('Your answer is wrong','16x4?');
+                     if (answer == 64) window.open("");
+        }
+       }
+      });
 
 </script>
 
