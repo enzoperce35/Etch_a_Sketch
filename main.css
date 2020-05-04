@@ -1,0 +1,45 @@
+#button {
+    display: table;
+    margin: auto;
+    margin-top: 55px;
+    }
+    
+    #mainContainer {
+    width: 500px; 
+    height: 500px; 
+    border-style: solid;
+    border-width: 1px 1px; 
+    margin: auto;
+    margin-top: 20px; 
+    }
+    
+    .firstSquares {
+    width: auto; 
+    height: auto; 
+    border-color: rgb(186, 210, 216);
+    border-style: solid; 
+    border-width: 1px 1px; 
+    float: left; 
+    margin: auto;
+    }
+    
+    .squares {
+    width: auto; 
+    height: auto; 
+    border-color:  rgb(186, 210, 216);
+    border-style: solid; 
+    border-width: 1px 1px; 
+    float: left; 
+    margin: auto;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

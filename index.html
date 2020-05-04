@@ -3,115 +3,11 @@
 <head>
   <meta charset="UTF-8"/> 
   <title>Page Title</title>
+  <link rel = "stylesheet" href="main.css">
  </head>
 <body>
 
-  <script>
-
-    function createDiv(number) {
-      const varArray = [];
-        for (i=0; i<number; i++) {
-          var singleDiv = document.createElement('div');
-          varArray.push(singleDiv); 
-    };
-     return varArray;
-    }; 
-     
-    function convertToLetter(number) {
-      let alpha = "abcdefghijklmnopqrstuvwxyz";
-     return alpha = alpha.split("").splice(number-1, 1).toString().toUpperCase();
-    };
-    
-    function addtoSubcontainer(elementId, divCount) {
-       divCount.forEach(function(squares) {
-         elementId.appendChild(squares);
-     }) 
-    }
-     
-      var group = 0;
-    function setAttribute(squareGroup) {
-      squareGroup.forEach(function(square) {
-          square.setAttribute('style', "width: 30px; height: 30px; border-style: solid; border-width: 1px 1px; float: left; margin: auto;");
-          square.setAttribute('id', `${++group}`);
-          square.setAttribute('class', 'squares');
-      })
-     };
-
-      const subContainer = createDiv(16);
-      const SquaresA = createDiv(16);
-      const SquaresB = createDiv(16);
-      const SquaresC = createDiv(16);
-      const SquaresD = createDiv(16);
-      const SquaresE = createDiv(16);
-      const SquaresF = createDiv(16);
-      const SquaresG = createDiv(16);
-      const SquaresH = createDiv(16);
-      const SquaresI = createDiv(16);
-      const SquaresJ = createDiv(16);
-      const SquaresK = createDiv(16);
-      const SquaresL = createDiv(16);
-      const SquaresM = createDiv(16);
-      const SquaresN = createDiv(16);
-      const SquaresO = createDiv(16);
-      const SquaresP = createDiv(16);
-     
-      var button = document.createElement('button');
-        button.textContent =  'Reset the Sketch Pad';
-        button.setAttribute('style', "display: table; margin: auto; margin-top: 100px;")
-        button.setAttribute('id', "button");
-        document.body.append(button);
-      
-      const mainContainer = document.createElement('div');
-        mainContainer.setAttribute('id', 'mainContainer');
-        mainContainer.setAttribute('style', "margin-top: 75px; margin-bottom: 50px")
-        document.body.append(mainContainer);
-     
-      var myDivs = document.getElementById('mainContainer');
-      var subContainerId = 0;
-      subContainer.forEach(function (div) {
-           div.setAttribute('id', convertToLetter(`${++subContainerId}`)); 
-           div.setAttribute('class', 'subContainer');
-           div.setAttribute('style', "display: table; margin: auto;")
-           myDivs.appendChild(div);
-    });
-     
-      var SubA = document.getElementById("A"); addtoSubcontainer(SubA, SquaresA); setAttribute(SquaresA);
-      var SubC = document.getElementById("C"); addtoSubcontainer(SubC, SquaresC); setAttribute(SquaresC); 
-      var SubD = document.getElementById("D"); addtoSubcontainer(SubD, SquaresD); setAttribute(SquaresD);
-      var SubE = document.getElementById("E"); addtoSubcontainer(SubE, SquaresE); setAttribute(SquaresE);
-      var SubF = document.getElementById("F"); addtoSubcontainer(SubF, SquaresF); setAttribute(SquaresF);
-      var SubG = document.getElementById("G"); addtoSubcontainer(SubG, SquaresG); setAttribute(SquaresG);
-      var SubH = document.getElementById("H"); addtoSubcontainer(SubH, SquaresH); setAttribute(SquaresH);
-      var SubI = document.getElementById("I"); addtoSubcontainer(SubI, SquaresI); setAttribute(SquaresI);
-      var SubJ = document.getElementById("J"); addtoSubcontainer(SubJ, SquaresJ); setAttribute(SquaresJ);
-      var SubK = document.getElementById("K"); addtoSubcontainer(SubK, SquaresK); setAttribute(SquaresK);
-      var SubL = document.getElementById("L"); addtoSubcontainer(SubL, SquaresL); setAttribute(SquaresL);
-      var SubM = document.getElementById("M"); addtoSubcontainer(SubM, SquaresM); setAttribute(SquaresM);
-      var SubN = document.getElementById("N"); addtoSubcontainer(SubN, SquaresN); setAttribute(SquaresN);
-      var SubO = document.getElementById("O"); addtoSubcontainer(SubO, SquaresO); setAttribute(SquaresO);
-      var SubB = document.getElementById("B"); addtoSubcontainer(SubB, SquaresB); setAttribute(SquaresB);
-      var SubP = document.getElementById("P"); addtoSubcontainer(SubP, SquaresP); setAttribute(SquaresP);
-
-      var Squares = document.querySelectorAll(".squares");
-       Squares.forEach((div) => {
-         div.addEventListener('mouseover', (e) => {
-            div.style.backgroundColor = "green";
-       });
-     });
-
-      var resetButton = document.querySelector('#button');
-       resetButton.addEventListener('click', function()  {
-           answer =  prompt('How many total squares are there on each side?', 'please enter a number');{
-                if (answer == 64) {
-                  window.open("https://enzoperce35.github.io/Etch_a_Sketch/");
-                }else {
-                 answer = prompt('Your answer is wrong','16x4?');
-                     if (answer == 64) window.open("");
-        }
-       }
-      });
-
-</script>
+    <script src = "main.js"></script>
 
 </body>
 </html>
